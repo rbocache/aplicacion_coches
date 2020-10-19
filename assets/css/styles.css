@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 350px;
+}
+
+ul {
+    list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul li {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+
+body {
+    background-color: #ddd;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;;
+}
+
+.caja-contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.popup {
+    width: 500px;
+    height: 500px;
+    border: 1px solid #000;
+}
+
+.caja-encabezado {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.botones {
+    display: flex;    
+}
+
+.botones a {
+    margin-right: 20px;
+}
+
+.button {
+    border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: #fff;
+	color: #666;
+    padding: 0.5rem 1rem;
+    height: 50px;
+    display: flex;
+    align-items: center; 
+      
+}
+
+.caja-propiedades {
+    margin-top: 20px;
+}
+
+.caja-formulario {
+    width: 60%;
+    margin: 20px auto 40px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;    
+}
+
+.grupo label {
+	margin-bottom: 0.5rem;
+}
+
+.grupo input,
+.grupo textarea,
+.grupo select {
+	display: block;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+}
+
+ .grupo.grupo-checkbox {
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}
+
+.grupo.grupo-checkbox label {
+	margin-bottom: 0;
+	margin-left: 0.5rem;
+}
+
+.grupo-select {
+    display: flex;
+    flex-direction: column;
+} 
+
+.grupo-file {
+    display: flex;
+    flex-direction: column;
+}
+
+.propiedad {
+    display: flex;
+    margin: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.caja-foto {
+    width: 25%;
+    margin: 10px;    
+}
+
+.caja-datos {
+    width: 75%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.caja-extras {
+    display: flex;
+    justify-content: space-evenly;    
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+}
+
+.error-input {
+    color: red;
+    border: 1px solid red !important;
+}
+
+.error,
+.error-message,
+.error-img {
+    color: red;    
+}
+
+.valid-input {
+    color: green;
+    border: 1px solid green !important;
+}
+
+.registro-creado,
+.conexion-creada {
+    text-align: center !important;
+    font-size: 1.5rem;
+    color: green;
+    margin: 0;
+}
+
+p.success.small {
+	font-size: 12px;
+	color: green;
+	margin-top: 0px;
+}
+
+p.error.small {
+	font-size: 12px;
+	color: red;
+	margin-top: 0px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+#popupBody{
+    width: 46%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 5% auto;    
+}
+
+
+
+
+
