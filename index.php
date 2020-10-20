@@ -1,5 +1,5 @@
 <?php
-$title = "Aplicación de compra/venta de cochesss";
+$title = "Aplicación de compra/venta de coches";
 
 include "./classes/class.forms.php";
 include "./templates/header.php"; ?>

@@ -1,7 +1,7 @@
 <?php
 
-include "./classes/class.forms.php";
-include "./classes/class.db.php";
+include "../classes/class.forms.php";
+include "../classes/class.db.php";
 
 $Formulario = new Forms();
 $enviarMarca = new DBforms();
@@ -36,7 +36,7 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
     );           
     
 ?>
-    <button type="submit" class="submit">Guardar Marca</button>
+    <button type="submit" class="submit" onClick="cerrar_this()">Guardar Marca</button>
 </form>
 </div>
 <?php
@@ -60,4 +60,15 @@ if (!$errores && $existeValidacion) {
     
 }
 ?>
+
+<script language="JavaScript"> 
+function cerrar_this() { 
+    setInterval('cerrar' ,1000);
+    function cerrar(){
+        opener.window.location.href += "?actualizado=exito";
+        opener.window.location.reload(); 
+        self.close(); return false; 
+    }
+} 
+</script> 
 

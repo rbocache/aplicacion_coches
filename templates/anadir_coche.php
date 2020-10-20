@@ -73,7 +73,7 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
     ?>
 
     <div class="botones">
-            <a class="button" href="#" onclick="ventanaSecundaria('./templates/anadir_coche.php')">Añadir Marca</a>
+            <a class="button" href="#" onclick="ventanaSecundaria('./templates/anadir_marca.php')">Añadir Marca</a>
     </div>
 
     <?php

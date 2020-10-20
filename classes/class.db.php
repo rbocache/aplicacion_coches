@@ -13,10 +13,10 @@ class DBforms {
     
 
     public function __construct(
-        $servername = 'localhost',
-        $username = 'root',
-        $password = 'root',
-        $myDB = 'APLICACION_COCHES'
+        $servername = '82.223.117.134:22',
+        $username = 'raulbocache',
+        $password = 'hRv{<=N(}>!X58r^',
+        $myDB = 'raul_bocache_db'
     ) {
         $this->servername = $servername;
         $this->username = $username;
