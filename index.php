@@ -2,8 +2,12 @@
 $title = "Aplicación de compra - venta de coches";
 
 include "./classes/class.forms.php";
-include "./templates/header.php"; ?>
+include "./templates/header.php"; 
 
+error_reporting(E_ALL); 
+ini_set("display_errors", 1);
+
+?>
 
 <div class="caja-contenedor">
     <div class="caja-encabezado">
