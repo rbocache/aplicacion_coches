@@ -13,7 +13,7 @@ class DBforms {
     
 
     public function __construct(
-        $servername = '82.223.117.134:22',
+        $servername = 'localhost',
         $username = 'raulbocache',
         $password = 'hRv{<=N(}>!X58r^',
         $myDB = 'raul_bocache_db'
