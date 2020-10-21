@@ -98,7 +98,7 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
     ?>
 
     <div class="botones">
-            <a class="button" 
+            <a class="button" href="./templates/anadir_modelo.php">Añadir Modelo</a>
     </div>
     <?php
 
