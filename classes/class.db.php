@@ -15,7 +15,7 @@ class DBforms {
     public function __construct(
         $servername = 'localhost',
         $username = 'raulbocache',
-        $password = '',
+        $password = 'hRv{<=N(}>!X58r^',
         $myDB = 'raul_bocache_db'
     ) {
         $this->servername = $servername;
