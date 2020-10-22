@@ -536,6 +536,7 @@ class DBforms {
         $miConexion->close();
 
         if ($prepare) {
+            echo "Prepare";
             while ($row = $prepare->fetch_assoc()) {
                 $resultados_array[] = $row;
             }
