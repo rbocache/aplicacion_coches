@@ -174,7 +174,17 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
         $placeholder = "¿Cuántas puertas tiene el coche",
         $label = "Número puertas",
         $validacion = $existeValidacion
-    );        
+    );
+    
+    // precio (int) -->
+    $Formulario->showInput(
+        $type = "number",
+        $id = "precio",
+        $name = "precio",
+        $placeholder = "Indica el precio del coche",
+        $label = "Precio",
+        $validacion = $existeValidacion
+    );
     
 ?>
     <button type="submit" class="submit">Guardar coche</button>
@@ -219,14 +229,15 @@ if (!$errores && $existeValidacion) {
         
     // Guardar coche
     $idCoche = $enviarCoche->enviarCoche(
-        'iiiiiii',
+        'iiiiiiii',
         $idMarca,                
         $idMedia,
         $idTipoMotor,
         $idComprador,
         $idVendedor,
         $Formulario->datosRecibidos['anio_fabricacion'],
-        $Formulario->datosRecibidos['n_puertas']               
+        $Formulario->datosRecibidos['n_puertas'],
+        $Formulario->datosRecibidos['precio']               
     );
     
     if (!empty($idCoche)) {

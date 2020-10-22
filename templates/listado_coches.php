@@ -10,8 +10,14 @@
                         <p>Fecha de compra: <?php echo $coche['fecha_compra'] ?> </p>
                         </div>
                         <div class="caja-marca">
+                        <p>Marca: <?php echo $coche['marca'] ?> </p>
+                        <p>Modelo: <?php echo $coche['modelo'] ?> </p>
+                        <p>Motor: <?php echo $coche['tipo_motor'] ?> </p>
                         </div>
                         <div class="caja-vehiculo">
+                        <p>Fabricación: <?php echo $coche['anio_fabricacion'] ?> </p>
+                        <p>Puertas: <?php echo $coche['n_puertas'] ?> </p>
+                        <p>Precio: <?php echo $coche['precio'] ?> </p>
                         </div>
                 </div>                
             </div>

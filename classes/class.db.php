@@ -49,10 +49,10 @@ class DBforms {
         echo '</pre>';
     }    
 
-    public function enviarCoche($datos, $idMarca, $idMedia, $idTipoMotor, $idComprador, $idVendedor, $anio_fabricacion, $n_puertas)
+    public function enviarCoche($datos, $idMarca, $idMedia, $idTipoMotor, $idComprador, $idVendedor, $anio_fabricacion, $n_puertas, $precio)
     {
         $miConexion = $this->crearConexion();
-        $enviarCoche = $miConexion->prepare("INSERT INTO COCHES (MARCAS_id, MEDIA_featured_id, TIPO_MOTOR_id, COMPRADORES_id, VENDEDORES_id, anio_fabricacion, n_puertas ) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $enviarCoche = $miConexion->prepare("INSERT INTO COCHES (MARCAS_id, MEDIA_featured_id, TIPO_MOTOR_id, COMPRADORES_id, VENDEDORES_id, anio_fabricacion, n_puertas, precio ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $enviarCoche->bind_param(
             $datos,
             $idMarca,
@@ -61,7 +61,8 @@ class DBforms {
             $idComprador,
             $idVendedor,
             $anio_fabricacion,
-            $n_puertas
+            $n_puertas,
+            $precio
         );
 
         // Compruebo si la conexión se establece bien
