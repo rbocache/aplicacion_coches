@@ -2,7 +2,7 @@
 
 include "./classes/class.forms.php";
 include "./classes/class.db.php";
-// git
+
 $FormularioCeina = new Forms();
 $enviarComprador = new DBforms();
 
@@ -112,7 +112,7 @@ if (!$errores && $existeValidacion) {
     
     // Primero guardamos la dirección
     
-    $idDireccion = $enviarVendedorComprador->enviarDireccion(
+    $idDireccion = $enviarComprador->enviarDireccion(
         'sssss',
         $FormularioCeina->datosRecibidos['calle'],
         $FormularioCeina->datosRecibidos['codigo_postal'],
