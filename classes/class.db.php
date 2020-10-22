@@ -518,25 +518,8 @@ class DBforms {
         VENDEDORES_id,
         anio_fabricacion,
         n_puertas,
-        fecha_compra,
-        COMPRADORES.nombre,
-        COMPRADORES.apellidos,
-        VENDEDORES.nombre,
-        VENDEDORES.apellidos,
-        MARCAS.nombre AS queMarca,
-        TIPO_MOTOR.tipo,  
-        MEDIAS.path
-        FROM raul_bocache_db.COCHES
-        LEFT JOIN raul_bocache_db.MARCAS
-        ON COCHES.MARCAS_id = MARCAS.nombre
-        LEFT JOIN raul_bocache_db.COMPRADORES
-        ON COCHES.COMPRADORES_id = COMPRADORES.id
-        LEFT JOIN raul_bocache_db.VENDEDORES
-        ON COCHES.VENDEDORES_id = VENDEDORES.id
-        LEFT JOIN raul_bocache_db.TIPO_MOTOR
-        ON COCHES.TIPO_MOTOR_id = TIPO_MOTOR.id
-        LEFT JOIN raul_bocache_db.MEDIAS
-        ON COCHES.MEDIA_featured_id = MEDIAS.id;");
+        fecha_compra        
+        FROM raul_bocache_db.COCHES;");
 
         // COMPROBAR SI HAY ERROR
         if (!$prepare) {
