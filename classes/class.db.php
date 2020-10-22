@@ -512,30 +512,17 @@ class DBforms {
         $miConexion = $this->crearConexion();
 
         // PREPARAR QUERY
-        $prepare = $miConexion->prepare("SELECT *
-        FROM COCHES;");
-
-        // COMPROBAR SI HAY ERROR
-        if (!$prepare) {
-            var_dump($miConexion->error_list);
-        }
-
-        // EJECUTAR
-        $prepare->execute();
-
-        // BIND RESULT
-        $prepare->bind_result($id, $nombre);
-
-        // FETCH RESULT
-        $miArray = array();
-        while ($prepare->fetch()) {
-            $miArray[$id] = $nombre;           
-        }
+        $resultados_array = array(); 
         
-       
-        // CLOSE CONNECTION
-        $miConexion->close();
-
-        return $miArray;
-    }
+        $result = $mysqli->query("SELECT *
+        FROM COCHES;");
+        
+        if ($result) {
+                while ($row = $result->fetch_assoc())
+                {
+                    $resultados_array[] = $row;
+                }            
+            return $resultados_array;
+        }
+    }       
 }
