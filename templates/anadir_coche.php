@@ -242,6 +242,8 @@ if (!$errores && $existeValidacion) {
     
     if (!empty($idCoche)) {
         echo '<p>Gracias, hemos recibido y guardado sus datos</p>';
+    }else {
+        echo '<p>Ha habido un error al guardar en la base de datos';
     }
 
     
