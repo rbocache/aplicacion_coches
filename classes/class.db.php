@@ -535,12 +535,11 @@ class DBforms {
         // CLOSE CONNECTION
         $miConexion->close();
 
-        if ($prepare) {
-            echo "Prepare";
+        if ($prepare) {            
             while ($row = $prepare->fetch_assoc()) {
                 $resultados_array[] = $row;
             }
-           
+           var_dump($resultados_array);
             return $resultados_array;
         }    
     }
