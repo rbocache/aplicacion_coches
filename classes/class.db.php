@@ -514,9 +514,12 @@ class DBforms {
         // PREPARAR QUERY
         $resultados_array = array(); 
         
-        $result = $mysqli->query("SELECT *
+        $result = $miConexion->query("SELECT *
         FROM COCHES;");
         
+        // CLOSE CONNECTION
+        $miConexion->close();
+
         if ($result) {
                 while ($row = $result->fetch_assoc())
                 {
