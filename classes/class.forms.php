@@ -266,10 +266,10 @@ class Forms {
                 
             ) {
                 
-                $this->showPRE($this->fotoRecibida['type']);
+                /* $this->showPRE($this->fotoRecibida['type']);
                 $this->showPRE($fichero_extension);
                 $this->showPRE($this->array_mime_types);
-                $this->showPRE($this->array_extensiones_permitidas);
+                $this->showPRE($this->array_extensiones_permitidas); */
 
                 $classes .= " error-input";
                 
