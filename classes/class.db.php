@@ -532,17 +532,15 @@ class DBforms {
             $miArray[$id] = $nombre;           
         } */
 
+        // CLOSE CONNECTION
+        $miConexion->close();
+
         if ($prepare) {
             while ($row = $prepare->fetch_assoc()) {
                 $resultados_array[] = $row;
             }
            
             return $resultados_array;
-        }
-       
-        // CLOSE CONNECTION
-        $miConexion->close();
-
-        return $miArray;
+        }    
     }
 }
