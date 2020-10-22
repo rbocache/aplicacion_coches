@@ -513,7 +513,7 @@ class DBforms {
 
         // PREPARAR QUERY
         $prepare = $miConexion->prepare("SELECT *
-        FROM raul_bocache_db.COCHES;");
+        FROM COCHES;");
 
         // COMPROBAR SI HAY ERROR
         if (!$prepare) {
