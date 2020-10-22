@@ -3,6 +3,9 @@
 include "./classes/class.forms.php";
 include "./classes/class.db.php";
 
+error_reporting(E_ALL); 
+ini_set("display_errors", 1);
+
 $FormularioCeina = new Forms();
 $enviarComprador = new DBforms();
 
