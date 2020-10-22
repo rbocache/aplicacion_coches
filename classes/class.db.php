@@ -513,12 +513,7 @@ class DBforms {
 
         // PREPARAR QUERY
         $prepare = $miConexion->prepare("SELECT
-        MEDIA_featured_id,
-        COMPRADORES_id,
-        VENDEDORES_id,
-        anio_fabricacion,
-        n_puertas,
-        fecha_compra        
+        *        
         FROM raul_bocache_db.COCHES;");
 
         // COMPROBAR SI HAY ERROR
