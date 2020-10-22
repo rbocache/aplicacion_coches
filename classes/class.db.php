@@ -513,16 +513,22 @@ class DBforms {
 
         // PREPARAR QUERY
         $prepare = $miConexion->prepare("SELECT
-        raul_bocache_db.COCHES.*,
-        raul_bocache_db.COMPRADORES.nombre,
-        raul_bocache_db.COMPRADORES.apellidos,
-        raul_bocache_db.VENDEDORES.nombre,
-        raul_bocache_db.VENDEDORES.apellidos,
-        raul_bocache_db.MARCAS.nombre,
-        raul_bocache_db.MODELOS.nombre,
-        raul_bocache_db.TIPO_MOTOR.tipo,  
-        raul_bocache_db.MEDIAS.path
+        MEDIA_featured_id,
+        COMPRADORES_id,
+        VENDEDORES_id,
+        anio_fabricacion,
+        n_puertas,
+        fecha_compra,
+        COMPRADORES.nombre,
+        COMPRADORES.apellidos,
+        VENDEDORES.nombre,
+        VENDEDORES.apellidos,
+        MARCAS.nombre AS queMarca,
+        TIPO_MOTOR.tipo,  
+        MEDIAS.path
         FROM raul_bocache_db.COCHES
+        LEFT JOIN raul_bocache_db.MARCAS
+        ON COCHES.MARCAS_id = MARCAS.nombre
         LEFT JOIN raul_bocache_db.COMPRADORES
         ON COCHES.COMPRADORES_id = COMPRADORES.id
         LEFT JOIN raul_bocache_db.VENDEDORES
