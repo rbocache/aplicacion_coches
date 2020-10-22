@@ -1,5 +1,5 @@
 <?php
-
+echo "";
 include "./classes/class.forms.php";
 include "./classes/class.db.php";
 
