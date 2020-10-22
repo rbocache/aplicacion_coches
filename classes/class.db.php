@@ -527,20 +527,15 @@ class DBforms {
         $prepare->bind_result($id, $nombre);
 
         // FETCH RESULT
-        /* $miArray = array();
+        $miArray = array();
         while ($prepare->fetch()) {
             $miArray[$id] = $nombre;           
-        } */
-
+        }
+        
+       
         // CLOSE CONNECTION
         $miConexion->close();
 
-        if ($prepare) {            
-            while ($row = $prepare->fetch_assoc()) {
-                $resultados_array[] = $row;
-            }
-           var_dump($resultados_array);
-            return $resultados_array;
-        }    
+        return $miArray;
     }
 }

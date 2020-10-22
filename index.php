@@ -22,11 +22,11 @@ include "./templates/header.php";
     $ultimosCoches = $Coches->obtenerDatos();
     var_dump($ultimosCoches);
     
-    foreach ($ultimosCoches as $coche) {
+    /* foreach ($ultimosCoches as $coche) {
         $coche = $coche;
         
         include "./templates/listado_coches.php";
-    }
+    } */
 
     ?>    
     </div>
