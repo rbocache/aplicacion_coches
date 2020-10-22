@@ -527,9 +527,17 @@ class DBforms {
         $prepare->bind_result($id, $nombre);
 
         // FETCH RESULT
-        $miArray = array();
+        /* $miArray = array();
         while ($prepare->fetch()) {
             $miArray[$id] = $nombre;           
+        } */
+
+        if ($prepare) {
+            while ($row = $prepare->fetch_assoc()) {
+                $resultados_array[] = $row;
+            }
+           
+            return $resultados_array;
         }
        
         // CLOSE CONNECTION
