@@ -32,7 +32,7 @@ class Forms {
         } */
         // Utilizar la función reset(); me permite coger el primer valor de un array.
         if (!empty($files)){
-        $this->showPRE(reset($files));
+        /* $this->showPRE(reset($files)); */
         $this->fotoRecibida = reset($files);
         }
     }
@@ -266,10 +266,10 @@ class Forms {
                 
             ) {
                 
-                /* $this->showPRE($this->fotoRecibida['type']);
+                $this->showPRE($this->fotoRecibida['type']);
                 $this->showPRE($fichero_extension);
                 $this->showPRE($this->array_mime_types);
-                $this->showPRE($this->array_extensiones_permitidas); */
+                $this->showPRE($this->array_extensiones_permitidas);
 
                 $classes .= " error-input";
                 

@@ -9,7 +9,7 @@ $enviarCoche = new DBforms();
 // COMPRUEBO SI ESTAMOS EN METODO POST Y QUE HAYA MEDIA.
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    /* var_dump($_FILES); */
+    
     
     if ($_FILES[key($_FILES)]['size'] === 0) {
         
