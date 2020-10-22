@@ -529,7 +529,7 @@ class DBforms {
         ON COCHES.VENDEDORES_id = VENDEDORES.id
         LEFT JOIN raul_bocache_db.TIPO_MOTOR
         ON COCHES.TIPO_MOTOR_id = TIPO_MOTOR.id
-        LEFT JOIN raul_bocache_db.MEDIA
+        LEFT JOIN raul_bocache_db.MEDIAS
         ON COCHES.MEDIA_featured_id = MEDIAS.id;");
 
         // COMPROBAR SI HAY ERROR
