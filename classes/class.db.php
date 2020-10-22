@@ -515,7 +515,7 @@ class DBforms {
         // PREPARAR QUERY
         $resultados_array = array(); 
         
-        $result = $miConexion->query("SELECT * FROM ‘COCHES’ ORDER BY ‘COCHES.id’ DESC LIMIT 1");
+        $result = $miConexion->query("SELECT * FROM COCHES ORDER BY COCHES.id DESC LIMIT 1");
         
         // CLOSE CONNECTION
         $miConexion->close();
