@@ -2,11 +2,8 @@
 $title = "Aplicación de compra - venta de coches";
 
 include "./classes/class.forms.php";
+include "./classes/class.db.php";
 include "./templates/header.php"; 
-
-error_reporting(E_ALL); 
-ini_set("display_errors", 1);
-
 ?>
 
 <div class="caja-contenedor">
@@ -21,7 +18,15 @@ ini_set("display_errors", 1);
 
     <div class="caja-propiedades">  
     <?php   
+    $Coches = new DBforms();
+    $ultimosCoches = $Coches->obtenerDatos();
+    var_dump($ultimosCoches);
     
+    foreach ($ultimosCoches as $coche) {
+        $coche = $coche;
+        
+        include "./templates/listado_coches.php";
+    }
 
     ?>    
     </div>

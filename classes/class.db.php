@@ -512,7 +512,25 @@ class DBforms {
         $miConexion = $this->crearConexion();
 
         // PREPARAR QUERY
-        $prepare = $miConexion->prepare("SELECT id, nombre FROM VENDEDORES");
+        $prepare = $miConexion->prepare("SELECT
+        raul_bocache_db.COCHES.*,
+        raul_bocache_db.COMPRADORES.nombre,
+        raul_bocache_db.COMPRADORES.apellidos,
+        raul_bocache_db.VENDEDORES.nombre,
+        raul_bocache_db.VENDEDORES.apellidos,
+        raul_bocache_db.MARCAS.nombre,
+        raul_bocache_db.MODELOS.nombre,
+        raul_bocache_db.TIPO_MOTOR.tipo,  
+        raul_bocache_db.MEDIAS.path
+        FROM raul_bocache_db.COCHES
+        LEFT JOIN raul_bocache_db.COMPRADORES
+        ON COCHES.COMPRADORES_id = COMPRADORES.id
+        LEFT JOIN raul_bocache_db.VENDEDORES
+        ON COCHES.VENDEDORES_id = VENDEDORES.id
+        LEFT JOIN raul_bocache_db.TIPO_MOTOR
+        ON COCHES.TIPO_MOTOR_id = TIPO_MOTOR.id
+        LEFT JOIN raul_bocache_db.MEDIA
+        ON COCHES.MEDIA_featured_id = MEDIAS.id;");
 
         // COMPROBAR SI HAY ERROR
         if (!$prepare) {
