@@ -10,7 +10,7 @@ include "./templates/header.php"; ?>
         <h1><?php echo $title ?></h1>
         <div class="botones">
           <a id="cerrar" class="button" href="./index.php">Volver</a>
-          <a id="cerrar" class="button" href="./anadir_marca.php">Nueva Marca</a>
+          <a id="cerrar" class="button" href="./templates/anadir_marca.php">Nueva Marca</a>
           <a id="cerrar" class="button" href="./anadir_modelo.php">Nuevo Modelo</a>
           <a id="cerrar" class="button" href="./anadir_motor">Nuevo Tipo de Motor</a>
         </div>
