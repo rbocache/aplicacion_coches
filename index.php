@@ -13,9 +13,9 @@ include "./templates/header.php";
             <a class="button" href="./coche.php">Añadir Coche</a>
             <a class="button" href="./comprador.php">Añadir Comprador</a>
             <a class="button" href="./vendedor.php">Añadir Vendedor</a>
-            <a class="button" href="./coche.php">Añadir Marca</a>
-            <a class="button" href="./comprador.php">Añadir Modelo</a>
-            <a class="button" href="./vendedor.php">Añadir Tipo Motor </a>           
+            <a class="button" href="./marca.php">Añadir Marca</a>
+            <a class="button" href="./modelo.php">Añadir Modelo</a>
+            <a class="button" href="./motor.php">Añadir Tipo Motor </a>           
         </div>
     </div>
 
