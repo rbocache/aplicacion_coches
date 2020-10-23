@@ -30,41 +30,18 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
 >
     <?php
     
-// Marcas (select)
-$Formulario->showInput(
-    $type = "select",
-    $id = "marca",
-    $name = "marca",
-    $placeholder = "",
-    $label = "Todas las marcas",
-    $validacion = $existeValidacion,
-    $options = $enviarCoche->obtenerMarcas()                      
-);
-
-// Modelos (select)
-$Formulario->showInput(
-    $type = "select",
-    $id = "modelo",
-    $name = "modelo",
-    $placeholder = "",
-    $label = "Todas los modelos",
-    $validacion = $existeValidacion,
-    $options = $enviarCoche->obtenerModelos()                      
-);
-
-// Tipo_motor (select)
-$Formulario->showInput(
-    $type = "select",
-    $id = "tipo_motor",
-    $name = "tipo_motor",
-    $placeholder = "",
-    $label = "Todas las tipos de motor",
-    $validacion = $existeValidacion,
-    $options = $enviarCoche->obtenerTipoMotor()                      
-);
+    // marca (text) -->
+    $Formulario->showInput(
+        $type = "text",
+        $id = "marca",
+        $name = "marca",
+        $placeholder = "Escribe la marca del coche",
+        $label = "Marca del coche",
+        $validacion = $existeValidacion
+    );           
     
 ?>
-    <button type="submit" class="submit">Guardar Datos</button>
+    <button type="submit" class="submit">Guardar Marca</button>
 </form>
 </div>
 <?php
