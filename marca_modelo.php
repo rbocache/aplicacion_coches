@@ -1,6 +1,6 @@
 
 <?php
-$title = "Añadir Marca";
+$title = "Añadir Datos de Marca, Modelo y Tipo de motor";
 
 
 include "./templates/header.php"; ?>
