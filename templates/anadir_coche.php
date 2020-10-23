@@ -54,30 +54,6 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
         $validacion = $existeValidacion
     );
 
-    echo "<p>Selecciona Marca</p>";
-
-    // Marcas (select)
-    $Formulario->showInput(
-        $type = "select",
-        $id = "marca",
-        $name = "marca",
-        $placeholder = "",
-        $label = "Todas las marcas",
-        $validacion = $existeValidacion,
-        $options = $enviarCoche->obtenerMarcas()                      
-    );   
-    
-    // Añadir marca si no existe
-    echo "<hr>";
-    echo "<p>Si no se encuentra disponible, añade una marca</p>";
-    ?>
-
-    <div class="botones">
-            <a class="button" href="./templates/anadir_marca.php">Añadir Marca</a>
-    </div>
-
-    <?php
-
     echo "<hr>";
     echo "<p>Selecciona Modelos</p>";
 
@@ -89,20 +65,8 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
         $placeholder = "",
         $label = "Todos los modelos",
         $validacion = $existeValidacion,
-        $options = $enviarCoche->obtenerModelosMarcas()             
-    );
-
-    // Añadir modelo si no existe
-    echo "<hr>";
-    echo "<p>Si no se encuentra disponible, añade un modelo</p>";
-    ?>
-
-    <div class="botones">
-            <a class="button" href="./templates/anadir_modelo.php">Añadir Modelo</a>
-    </div>
-    <?php
-
-    
+        $options = $enviarCoche->obtenerModelos()             
+    );  
 
     echo "<hr>";
     echo "<p>Selecciona Tipo de Motor</p>";
@@ -118,17 +82,9 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
         $options = $enviarCoche->obtenerTipoMotor()              
     );
 
-    // Añadir tipo_motor si no existe
     echo "<hr>";
-    echo "<p>Si no se encuentra disponible, añade un tipo de motor</p>";
-    ?>
-
-    <div class="botones">
-            <a class="button" href="./templates/anadir_modelo.php">Añadir Tipo Motor</a>
-    </div>
-    <?php
-
-    echo "<hr>";
+    echo "<p>Selecciona Comprador y vendedor</p>";
+    
 
     // compradores (select)
     $Formulario->showInput(
