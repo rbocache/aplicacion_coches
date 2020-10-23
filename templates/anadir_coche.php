@@ -55,6 +55,19 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
     );
 
     echo "<hr>";
+    echo "<p>Selecciona Marca</p>";
+
+    // Modelos (select)
+    $Formulario->showInput(
+        $type = "select",
+        $id = "marca",
+        $name = "marca",
+        $placeholder = "",
+        $label = "Todas las marcas",
+        $validacion = $existeValidacion,
+        $options = $enviarCoche->obtenerMarcas()             
+    );
+    echo "<hr>";
     echo "<p>Selecciona Modelos</p>";
 
     // Modelos (select)
