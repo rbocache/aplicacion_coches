@@ -193,7 +193,7 @@ p.error.small {
 	margin-top: 0px;
 }
 
-.overlay {
+/* .overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -216,7 +216,7 @@ p.error.small {
     position: relative;
     transition: all 5s ease-in-out;
     margin: 5% auto;    
-}
+} */
 
 
 
