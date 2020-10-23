@@ -66,7 +66,5 @@ if (!$errores && $existeValidacion) {
 }
 ?>
 
-<script language='JavaScript'>window.open('http://raulbocache.com/templates/anadir_marca.php', 'geoflotante', '');</script>
-
 
 

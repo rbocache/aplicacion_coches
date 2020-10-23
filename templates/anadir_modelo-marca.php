@@ -14,7 +14,10 @@ $enviarDatos = new DBforms();
 // COMPRUEBO SI ESTAMOS EN METODO POST Y QUE HAYA MEDIA.
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {          
-        
+    
+    $_POST['marca'] = !empty($_POST["marca"]) ? $_POST["marca"] : "";
+    $_POST['modelo'] = !empty($_POST["modelo"]) ? $_POST["modelo"] : "";
+    $_POST['tipo_motor'] = !empty($_POST["tipo_motor"]) ? $_POST["tipo_motor"] : "";
     $Formulario->enviarFormulario($_POST);   
 }
 
@@ -94,6 +97,8 @@ if (!$errores && $existeValidacion) {
         $Formulario->datosRecibidos['tipo_motor']                            
     );
     
+    // Mensajes de confirmación
+    
     if (!empty($idMarca) && !empty($idModelo) && !empty($idTipoMotor)) {
         echo '<p>Muchas gracias, se han guardados todos los datos</p>';
     }
@@ -113,15 +118,3 @@ if (!$errores && $existeValidacion) {
     
 }
 ?>
-
-<!-- <script language="JavaScript"> 
-function cerrar_this() { 
-    setInterval('cerrar' ,1000);
-    function cerrar(){
-        opener.window.location.href += "?actualizado=exito";
-        opener.window.location.reload(); 
-        self.close(); return false; 
-    }
-} 
-</script> --> 
-
