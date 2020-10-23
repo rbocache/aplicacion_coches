@@ -12,7 +12,7 @@ include "./templates/header.php"; ?>
     </div>        
     <div class="caja-formulario">  
         <?php
-        include "./templates/anadir_marca_modelo.php";
+        include "./templates/anadir_modelo-marca.php";
         ?>    
     </div>
         
