@@ -3,6 +3,10 @@
 include "./classes/class.forms.php";
 include "./classes/class.db.php";
 
+// Mostrar errores en tiempo de ejecución
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $Formulario = new Forms();
 $enviarCoche = new DBforms();
 
@@ -175,9 +179,9 @@ if (!$errores && $existeValidacion) {
 
     // Guardar Modelo
     $idModelo = $enviarCoche->enviarModelo(
-        'is',
-        $idMarca,
-        $Formulario->datosRecibidos['modelo']
+        'si',
+        $Formulario->datosRecibidos['modelo'],
+        $idMarca        
     );
 
     // Guardar Tipo de motor
