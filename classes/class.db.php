@@ -247,7 +247,7 @@ class DBforms {
         /* $this->showPRE($enviarFile); */
         $enviarMarca->bind_param(
             $datos,
-            $marca
+            $marca            
         );
 
         // Compruebo si la conexión se establece bien
@@ -275,15 +275,15 @@ class DBforms {
         return $id;
     }
 
-    public function enviarModelo($datos, $idMarca, $nombre)
+    public function enviarModelo($datos, $nombre, $idMarca)
     {
         $miConexion = $this->crearConexion();
-        $enviarModelo = $miConexion->prepare("INSERT INTO MODELOS (MARCAS_id, nombre) VALUES (?,?)");
+        $enviarModelo = $miConexion->prepare("INSERT INTO MODELOS (nombre, MARCAS_id) VALUES (?,?)");
         /* $this->showPRE($enviarFile); */
         $enviarModelo->bind_param(
             $datos,
-            $idMarca,
-            $nombre
+            $nombre,
+            $idMarca
         );
 
         // Compruebo si la conexión se establece bien
@@ -378,7 +378,7 @@ class DBforms {
         return $miArray;
     }
 
-    public function obtenerModelosMarcas()
+    public function obtenerModelos()
     {
 
         // ESTABLECER CONEXION

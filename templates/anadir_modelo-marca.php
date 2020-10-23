@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 $Formulario = new Forms();
-$enviarMarca = new DBforms();
+$enviarDatos = new DBforms();
 
 // COMPRUEBO SI ESTAMOS EN METODO POST Y QUE HAYA MEDIA.
 
@@ -38,7 +38,7 @@ $Formulario->showInput(
     $placeholder = "",
     $label = "Todas las marcas",
     $validacion = $existeValidacion,
-    $options = $enviarCoche->obtenerMarcas()                      
+    $options = $enviarDatos->obtenerMarcas()                      
 );
 
 // Modelos (select)
@@ -49,7 +49,7 @@ $Formulario->showInput(
     $placeholder = "",
     $label = "Todas los modelos",
     $validacion = $existeValidacion,
-    $options = $enviarCoche->obtenerModelos()                      
+    $options = $enviarDatos->obtenerModelos()                      
 );
 
 // Tipo_motor (select)
@@ -60,7 +60,7 @@ $Formulario->showInput(
     $placeholder = "",
     $label = "Todas las tipos de motor",
     $validacion = $existeValidacion,
-    $options = $enviarCoche->obtenerTipoMotor()                      
+    $options = $enviarDatos->obtenerTipoMotor()                      
 );
     
 ?>
@@ -73,16 +73,41 @@ $Formulario->showInput(
 $errores = $Formulario->hayErrores();
 
 // Enviar a la base de datos
-if (!$errores && $existeValidacion) {
+if (!$errores && $existeValidacion) {    
     
     // Guardar Marca
-    $idMarca = $enviarMarca->enviarMarca(
+    $idMarca = $enviarDatos->enviarMarca(
         's',
-        $Formulario->datosRecibidos['marca']                     
+        $Formulario->datosRecibidos['marca']                             
+    );
+
+    // Guardar Modelo
+    $idModelo = $enviarDatos->enviarModelo(
+        'si',
+        $Formulario->datosRecibidos['modelo'],
+        $idMarca                     
+    );
+
+    // Guardar tipo_motor
+    $idTipoMotor = $enviarDatos->enviarTipoMotor(
+        's',
+        $Formulario->datosRecibidos['tipo_motor']                            
     );
     
-    if (!empty($idMarca)) {
-        echo '<p>Gracias, hemos recibido y guardado sus datos</p>';
+    if (!empty($idMarca) && !empty($idModelo) && !empty($idTipoMotor)) {
+        echo '<p>Muchas gracias, se han guardados todos los datos</p>';
+    }
+
+    if (empty($idMarca)) {
+        echo '<p>Marca no se ha guardado</p>';
+    }
+
+    if (empty($idModelo)) {
+        echo '<p>Modelo no se ha guardado</p>';
+    } 
+
+    if (empty($idTipoMotor)) {
+        echo '<p>Tipo Motor no se ha guardado</p>';
     } 
     
     
