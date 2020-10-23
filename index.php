@@ -13,7 +13,7 @@ $ultimosCoches = $Coches->obtenerDatos();
         <h1><?php echo $title ?></h1>
         <div class="botones">
             <?php 
-            if(!$ultimosCoches){
+            if(!empty($ultimosCoches)){
             echo '<a class="button" href="./coche.php">Añadir Coche</a>';
             } ?>
             <a class="button" href="./comprador.php">Añadir Comprador</a>
