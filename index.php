@@ -12,7 +12,10 @@ include "./templates/header.php";
         <div class="botones">
             <a class="button" href="./coche.php">Añadir Coche</a>
             <a class="button" href="./comprador.php">Añadir Comprador</a>
-            <a class="button" href="./vendedor.php">Añadir Vendedor</a>           
+            <a class="button" href="./vendedor.php">Añadir Vendedor</a>
+            <a class="button" href="./coche.php">Añadir Marca</a>
+            <a class="button" href="./comprador.php">Añadir Modelo</a>
+            <a class="button" href="./vendedor.php">Añadir Tipo Motor </a>           
         </div>
     </div>
 
