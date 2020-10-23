@@ -41,7 +41,7 @@ $existeValidacion = !empty($Formulario) && $_SERVER["REQUEST_METHOD"] === "POST"
     );           
     
 ?>
-    <button type="submit" class="submit" onClick="cerrar_this()">Guardar Marca</button>
+    <button type="submit" class="submit">Guardar Marca</button>
 </form>
 </div>
 <?php
