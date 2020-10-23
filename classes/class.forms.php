@@ -18,8 +18,8 @@ class Forms {
         $this->errores = false;
         $this->dir_subida = getcwd() . "/tmp/";
         $this->dir_proyecto = "/12_examen_prueba/tmp/";
-        $this->array_mime_types = array('image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/webp');
-        $this->array_extensiones_permitidas = array('png', 'jpg', 'jpeg', 'gif', 'webp');
+        $this->array_mime_types = array('image/png', 'image/jpg', 'image/JPG', 'image/jpeg', 'image/gif', 'image/webp');
+        $this->array_extensiones_permitidas = array('png', 'jpg', 'JPG', 'jpeg', 'gif', 'webp');
     }
 
     public function enviarFormulario($datos, $files = null)
