@@ -1,7 +1,7 @@
 <?php
 
-include "../classes/class.forms.php";
-include "../classes/class.db.php";
+include "./classes/class.forms.php";
+include "./classes/class.db.php";
 
 
 // Mostrar errores en tiempo de ejecución
