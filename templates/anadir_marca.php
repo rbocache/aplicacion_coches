@@ -61,7 +61,7 @@ if (!$errores && $existeValidacion) {
 }
 ?>
 
-<script language="JavaScript"> 
+<!-- <script language="JavaScript"> 
 function cerrar_this() { 
     setInterval('cerrar' ,1000);
     function cerrar(){
@@ -70,5 +70,5 @@ function cerrar_this() {
         self.close(); return false; 
     }
 } 
-</script> 
+</script> --> 
 
