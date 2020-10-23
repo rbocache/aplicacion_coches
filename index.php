@@ -6,6 +6,10 @@ include "./classes/class.db.php";
 include "./templates/header.php"; 
 $Coches = new DBforms();
 $ultimosCoches = $Coches->obtenerDatos();
+$Compradores = $Coches->obtenerCompradores();
+$Vendedores = $Coches->obtenerVendedores();
+$Marcas = $Coches->obtenerMarcas();
+$Modelos = $Coches->obtenerModelos();
 ?>
 
 <div class="caja-contenedor">
@@ -13,7 +17,7 @@ $ultimosCoches = $Coches->obtenerDatos();
         <h1><?php echo $title ?></h1>
         <div class="botones">
             <?php 
-            if(!empty($ultimosCoches)){
+            if(!empty($Compradores)&&!empty($Vendedores)&&!empty($Marcas)&&!empty($Modelos)){
             echo '<a class="button" href="./coche.php">Añadir Coche</a>';
             } ?>
             <a class="button" href="./comprador.php">Añadir Comprador</a>
