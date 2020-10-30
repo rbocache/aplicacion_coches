@@ -14,29 +14,34 @@ class Forms {
     public $array_mime_types;
     public $array_extensiones_permitidas;
 
+    // Constructor de la classe, inicializa datos importantes
     public function __construct() {
         $this->errores = false;
         $this->dir_subida = getcwd() . "/tmp/";
-        $this->dir_proyecto = "/raulbocache.com/tmp/";
+        $this->dir_proyecto = "/var/www/raulbocache.com/html/tmp/";
         $this->array_mime_types = array('image/png', 'image/jpg', 'image/JPG', 'image/jpeg', 'image/gif', 'image/webp');
         $this->array_extensiones_permitidas = array('png', 'jpg', 'JPG', 'jpeg', 'gif', 'webp');
     }
 
-    public function enviarFormulario($datos, $files = null)
+    // Función para hacer previsualizaciones de datos (administrador)
+    private function showPRE($toPrint)
     {
-       
+        echo '<pre>';
+        print_r($toPrint);
+        echo '</pre>';
+    }
+
+    // Función que recoge los datos
+    public function enviarFormulario($datos, $files = null)
+    {       
         $this->datosRecibidos = $datos;
-        /* var_dump($this->datosRecibidos); */
-        /* if (empty($this->datosRecibidos['ascensor'])){
-            $this->datosRecibidos['ascensor'] = 'off';
-        } */
-        // Utilizar la función reset(); me permite coger el primer valor de un array.
-        if (!empty($files)){
-        /* $this->showPRE(reset($files)); */
+        
+        if (!empty($files)){        
         $this->fotoRecibida = reset($files);
         }
     }
-
+    
+    // Función que controla los tipos de inputs del formulario
     public function showInput($type, $id, $name, $placeholder, $label, $validacion, $options = null, $multiple = null)
     {
         switch ($type) {
@@ -68,16 +73,9 @@ class Forms {
                 # code...
                 break;
         }
-    }
+    }    
 
-    // Función para hacer previsualizaciones de datos
-    private function showPRE($toPrint)
-    {
-        echo '<pre>';
-        print_r($toPrint);
-        echo '</pre>';
-    }
-
+    // Muestra inputs tipo text
     private function getTypeText($type, $id, $name, $placeholder, $label, $validacion, $options=null)
     {
         $classes = "input input-text";
@@ -123,6 +121,7 @@ class Forms {
         echo $textInput;
     }
 
+    // Muestra inputs tipo number
     private function getTypeNumber($type, $id, $name, $placeholder, $label, $validacion)
     {
         $classes = "input input-number";
@@ -156,6 +155,7 @@ class Forms {
         
     }
 
+    // Muestra inputs tipo ckeckbox
     private function getTypeCheckbox($type, $id, $name, $placeholder, $label, $validacion)
     {
         $classes = "input input-checkbox";
@@ -174,6 +174,7 @@ class Forms {
         echo $checkBox;
     }
 
+    // Muestra inputs tipo select, de otras tablas
     private function getTypeSelect($type, $id, $name, $placeholder, $label, $validacion, $options, $multiple=false)
     {
         $classes = "input input-select";
@@ -248,6 +249,7 @@ class Forms {
         echo $select;
     }
 
+    // Muestra inputs tipo FILE (Imágenes)
     private function getTypeFile($type, $id, $name, $placeholder=null, $label, $validacion)
     {
         
@@ -278,10 +280,7 @@ class Forms {
                 return "";
                 
             }
-
-            /* $nuevoNombre = $this->escanearDirectorio(basename($this->fotoRecibida['name'])); */
-
-
+            
             move_uploaded_file($this->fotoRecibida['tmp_name'], $fichero_subido);
             $classes .= " valid-input";
         }
@@ -301,21 +300,22 @@ class Forms {
         echo $file;
     }
     
-
+    // Función para limpiar los datos
     private function sanitizacion($valor, $tipo)
     {
         switch ($tipo) {
             case 'text':
                 $filter = FILTER_SANITIZE_STRING;
                 break;
+
             case 'number':
                 $filter = FILTER_SANITIZE_NUMBER_INT;
                 break;
+
             case 'select':
                 $filter = FILTER_SANITIZE_STRING;
                 break;
-                
-            
+
             default:
                 # code...
                 break;
@@ -324,6 +324,7 @@ class Forms {
         return filter_var($valor, $filter);
     }
 
+    // Validados los datos introducidos
     private function validacion($valor, $tipo)
     {
         switch ($tipo) {
@@ -349,6 +350,7 @@ class Forms {
         }
     }
 
+    // Controla si hay errores o no
     public function hayErrores()
     {
         return $this->errores;

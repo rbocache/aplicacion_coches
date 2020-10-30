@@ -7,10 +7,7 @@ class DBforms {
     public $myDB;
 
     // Variable para el directorio de los files
-    public $dir_subida = "tmp/";    
-        
-    
-    
+    public $dir_subida = "tmp/";     
 
     public function __construct(
         $servername = 'localhost',
@@ -24,6 +21,7 @@ class DBforms {
         $this->myDB = $myDB;        
     }
 
+    // Función para crear la conexión con la BBDD
     public function crearConexion()
     {
         return new mysqli(
@@ -34,21 +32,15 @@ class DBforms {
         );
     }
 
+    // Errores de conexión
     public function hayError($conexion)
     {
         if ($conexion->connect_error) {
             die("La conexion ha fallado: " . $conexion->connect_error);
         }
-    }
+    }       
 
-    // Función para previsualizar datos
-    private function showPRE($toPrint)
-    {
-        echo '<pre>';
-        print_r($toPrint);
-        echo '</pre>';
-    }    
-
+    // Función que envia los coches a la BBDD
     public function enviarCoche($datos, $idMarca, $idMedia, $idTipoMotor, $idComprador, $idVendedor, $anio_fabricacion, $n_puertas, $precio)
     {
         $miConexion = $this->crearConexion();
@@ -88,6 +80,7 @@ class DBforms {
         return $id;
     }
 
+    // Función que envia los compradores a la BBDD
     public function enviarComprador($datos, $nombre, $apellidos, $idDireccion)
     {
         $miConexion = $this->crearConexion();
@@ -126,6 +119,7 @@ class DBforms {
         return $id;
     }
 
+    // Función que envia los vendedores a la BBDD
     public function enviarVendedor($datos, $nombre, $apellidos, $idDireccion)
     {
         $miConexion = $this->crearConexion();
@@ -164,6 +158,7 @@ class DBforms {
         return $id;
     }
 
+    // Función que envia la dirección a la BBDD
     public function enviarDireccion($datos, $calle, $codigo_postal, $localidad, $provincia, $pais)
     {
         $miConexion = $this->crearConexion();
@@ -204,6 +199,7 @@ class DBforms {
         return $id;
     }
 
+    // Función que envia las imágemes a la BBDD
     public function enviarFile($datos, $imagen)
     {
         $path =  $this->dir_subida . $imagen;
@@ -240,6 +236,7 @@ class DBforms {
         return $id;
     }    
 
+    // Función que envia los marcas a la BBDD
     public function enviarMarca($datos, $marca)
     {
         $miConexion = $this->crearConexion();
@@ -275,6 +272,7 @@ class DBforms {
         return $id;
     }
 
+    // Función que envia los modelos a la BBDD
     public function enviarModelo($datos, $nombre, $idMarca)
     {
         $miConexion = $this->crearConexion();
@@ -311,6 +309,7 @@ class DBforms {
         return $id;
     }
 
+    // Función que envia los tipo de motor a la BBDD
     public function enviarTipoMotor($datos, $tipo)
     {
         $miConexion = $this->crearConexion();
@@ -346,6 +345,7 @@ class DBforms {
         return $id;
     } 
 
+    // Función para leer las marcas (select)
     public function obtenerMarcas()
     {
 
@@ -378,6 +378,7 @@ class DBforms {
         return $miArray;
     }
 
+    // Función para leer las modelos (select)
     public function obtenerModelos()
     {
 
@@ -410,6 +411,7 @@ class DBforms {
         return $miArray;
     }
 
+    // Función para leer las tipos de motor (select)
     public function obtenerTipoMotor()
     {
 
@@ -442,6 +444,7 @@ class DBforms {
         return $miArray;
     }
 
+    // Función para leer los compradores (select)
     public function obtenerCompradores()
     {
 
@@ -474,6 +477,7 @@ class DBforms {
         return $miArray;
     }
 
+    // Función para leer los vendedores (select)
     public function obtenerVendedores()
     {
 
@@ -506,6 +510,7 @@ class DBforms {
         return $miArray;
     }
     
+    // Función para leer todos los datos y mostrarlos en la interface
     public function obtenerDatos()
     {
 
