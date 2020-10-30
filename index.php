@@ -11,7 +11,7 @@ include "./classes/class.db.php";
 include "./templates/header.php";
 
 $Coches = new DBforms();
-var_dump($Coches);
+
 
 // Obtenemos datos para filtrar
 $ultimosCoches = $Coches->obtenerDatos();
@@ -19,6 +19,8 @@ $Compradores = $Coches->obtenerCompradores();
 $Vendedores = $Coches->obtenerVendedores();
 $Marcas = $Coches->obtenerMarcas();
 $Modelos = $Coches->obtenerModelos();
+
+var_dump($Compradores);
 ?>
 
 <div class="caja-contenedor">
