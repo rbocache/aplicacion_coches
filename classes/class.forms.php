@@ -18,7 +18,7 @@ class Forms {
     public function __construct() {
         $this->errores = false;
         $this->dir_subida = getcwd() . "/tmp/";
-        $this->dir_proyecto = "/var/www/raulbocache.com/html/tmp/";
+        $this->dir_proyecto = "./tmp/";
         $this->array_mime_types = array('image/png', 'image/jpg', 'image/JPG', 'image/jpeg', 'image/gif', 'image/webp');
         $this->array_extensiones_permitidas = array('png', 'jpg', 'JPG', 'jpeg', 'gif', 'webp');
     }
