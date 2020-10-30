@@ -18,7 +18,7 @@ class Forms {
     public function __construct() {
         $this->errores = false;
         $this->dir_subida = getcwd() . "/tmp/";
-        $this->dir_proyecto = "/var/www/raulbocache.com/html/tmp/";
+        $this->dir_proyecto = "http://raulbocache.com/html/tmp/";
         $this->array_mime_types = array('image/png', 'image/jpg', 'image/JPG', 'image/jpeg', 'image/gif', 'image/webp');
         $this->array_extensiones_permitidas = array('png', 'jpg', 'JPG', 'jpeg', 'gif', 'webp');
     }
@@ -280,7 +280,7 @@ class Forms {
                 return "";
                 
             }
-            
+
             move_uploaded_file($this->fotoRecibida['tmp_name'], $fichero_subido);
             $classes .= " valid-input";
         }
