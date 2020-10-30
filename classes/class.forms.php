@@ -38,7 +38,7 @@ class Forms {
         
         if (!empty($files)){        
         $this->fotoRecibida = reset($files);
-        $this->showPRE($fotoRecibida);
+        $this->showPRE($this->fotoRecibida);
         }
     }
     
