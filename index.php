@@ -1,4 +1,9 @@
 <?php
+
+// Mostrar errores en tiempo de ejecución
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $title = "Aplicación de compra - venta de coches";
 
 include "./classes/class.forms.php";
