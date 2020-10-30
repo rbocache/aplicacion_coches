@@ -126,8 +126,9 @@ class Forms {
     {
         $classes = "input input-number";
         $miDato = "";
-        $esValido = false;
+        $esValido = true;
         if ($validacion) {
+            $esValido = false;
             $miDato = $this->sanitizacion($this->datosRecibidos[$name], $type);
             $esValido = $this->validacion($miDato, $type);
 
