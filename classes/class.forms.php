@@ -287,10 +287,9 @@ class Forms {
             
             move_uploaded_file($this->fotoRecibida['tmp_name'], $fichero_subido);
             $classes .= " valid-input";
-            $this->showPRE($this->fotoRecibida['type']);
-                $this->showPRE($fichero_extension);
-                $this->showPRE($this->array_mime_types);
-                $this->showPRE($this->array_extensiones_permitidas);
+            
+            $this->showPRE($this->fotoRecibida);
+                                
         }
 
         $file = '<div class="grupo">';
