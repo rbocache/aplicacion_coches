@@ -281,6 +281,8 @@ class Forms {
                 
             }
             
+            var_dump($fotoRecibida);
+            var_dump($fichero_subido);
             move_uploaded_file($this->fotoRecibida['tmp_name'], $fichero_subido);
             $classes .= " valid-input";
         }
