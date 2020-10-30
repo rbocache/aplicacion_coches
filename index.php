@@ -39,7 +39,6 @@ $Modelos = $Coches->obtenerModelos();
     <div class="caja-propiedades">  
     <?php   
     
-    var_dump($ultimosCoches);
     
     /* foreach ($ultimosCoches as $coche) {
         $coche = $coche;

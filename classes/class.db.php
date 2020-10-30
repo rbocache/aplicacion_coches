@@ -6,8 +6,8 @@ class DBforms {
     public $password;
     public $myDB;
 
-    // Variable para el directorio de los files
-    public $dir_subida = "tmp/";     
+    /* // Variable para el directorio de los files
+    public $dir_subida = "tmp/"; */     
 
     public function __construct(
         $servername = 'localhost',
