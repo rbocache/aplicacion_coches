@@ -37,8 +37,7 @@ class Forms {
         $this->datosRecibidos = $datos;
         
         if (!empty($files)){        
-        $this->fotoRecibida = reset($files);
-        $this->showPRE($this->fotoRecibida);
+        $this->fotoRecibida = reset($files);        
         }
     }
     
@@ -289,8 +288,7 @@ class Forms {
             move_uploaded_file($this->fotoRecibida['tmp_name'], $fichero_subido);
             $classes .= " valid-input";
             
-            $this->showPRE($this->fotoRecibida);
-                                
+            $this->showPRE($fichero_subido);                               
         }
 
         $file = '<div class="grupo">';
