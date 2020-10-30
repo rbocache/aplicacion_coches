@@ -19,8 +19,6 @@ $Compradores = $Coches->obtenerCompradores();
 $Vendedores = $Coches->obtenerVendedores();
 $Marcas = $Coches->obtenerMarcas();
 $Modelos = $Coches->obtenerModelos();
-
-var_dump($Compradores);
 ?>
 
 <div class="caja-contenedor">
