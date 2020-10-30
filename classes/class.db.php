@@ -6,8 +6,8 @@ class DBforms {
     public $password;
     public $myDB;
 
-    /* // Variable para el directorio de los files
-    public $dir_subida = "tmp/"; */     
+    //Variable para el directorio de los files
+    public $dir_subida;     
 
     public function __construct(
         $servername = 'localhost',
@@ -18,7 +18,8 @@ class DBforms {
         $this->servername = $servername;
         $this->username = $username;
         $this->password = $password;
-        $this->myDB = $myDB;        
+        $this->myDB = $myDB;
+        $this->dir_subida = getcwd() . "/tmp/";        
     }
 
     // Función para crear la conexión con la BBDD
