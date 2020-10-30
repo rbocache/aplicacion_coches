@@ -6,6 +6,7 @@ include "./classes/class.db.php";
 include "./templates/header.php";
 
 $Coches = new DBforms();
+var_dump($Coches);
 
 // Obtenemos datos para filtrar
 $ultimosCoches = $Coches->obtenerDatos();
