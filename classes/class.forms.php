@@ -35,9 +35,10 @@ class Forms {
     public function enviarFormulario($datos, $files = null)
     {       
         $this->datosRecibidos = $datos;
-        $this->showPRE($files);
+        
         if (!empty($files)){        
         $this->fotoRecibida = reset($files);
+        $this->showPRE($fotoRecibida);
         }
     }
     
