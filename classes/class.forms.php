@@ -130,6 +130,9 @@ class Forms {
         if ($validacion) {
             $miDato = $this->sanitizacion($this->datosRecibidos[$name], $type);
             $esValido = $this->validacion($miDato, $type);
+
+            var_dump($miDato);
+            var_dump($esValido);
            
             if ($esValido) {
                 $classes .= " valid-input";
