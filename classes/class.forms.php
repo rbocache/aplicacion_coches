@@ -35,7 +35,7 @@ class Forms {
     public function enviarFormulario($datos, $files = null)
     {       
         $this->datosRecibidos = $datos;
-        
+        var_dump($files);
         if (!empty($files)){        
         $this->fotoRecibida = reset($files);
         }
